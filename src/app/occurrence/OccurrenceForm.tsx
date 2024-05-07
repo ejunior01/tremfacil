@@ -15,8 +15,8 @@ import {
 
 import { occurrenceSchema } from "@/app/occurrence/schema"
 import { createOccurrence } from "@/app/occurrence/actions"
-import { Button } from "@/components/ui/Button"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { SubmitButton } from "@/components/SubmitButton"
 
 function onSubmit(values: z.infer<typeof occurrenceSchema>) {
     createOccurrence(values)
@@ -103,7 +103,7 @@ export function OccurrenceForm() {
                     )}
                 />
 
-                <Button type="submit" className="my-5">Enviar ocorrência</Button>
+                <SubmitButton name="Enviar ocorrência" />
             </form>
         </Form>
     )

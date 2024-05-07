@@ -1,5 +1,6 @@
 'use client'
 
+import { Button } from '@/components/ui/Button'
 import { useFormStatus } from 'react-dom'
 
 interface SubmitButtonProps {
@@ -10,8 +11,8 @@ export function SubmitButton({ name }: SubmitButtonProps) {
     const { pending } = useFormStatus()
 
     return (
-        <button type="submit" disabled={pending}>
+        <Button className="my-5" type="submit" disabled={pending}>
             {name}
-        </button>
+        </Button>
     )
 }

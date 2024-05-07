@@ -16,7 +16,7 @@ import {
 import { occurrenceSchema } from "@/app/occurrence/schema"
 import { createOccurrence } from "@/app/occurrence/actions"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Button } from "@/components/ui/Button"
+import { Button } from "@/components/ui/button"
 
 function onSubmit(values: z.infer<typeof occurrenceSchema>) {
     createOccurrence(values)
@@ -24,8 +24,6 @@ function onSubmit(values: z.infer<typeof occurrenceSchema>) {
 
 
 export function OccurrenceForm() {
-
-    const { pending } = useFormStatus()
 
     const form = useForm<z.infer<typeof occurrenceSchema>>({
         resolver: zodResolver(occurrenceSchema)
@@ -106,7 +104,7 @@ export function OccurrenceForm() {
                 />
 
 
-                <Button className="my-5" type="submit" disabled={pending}>
+                <Button className="my-5" type="submit">
                     Enviar ocorrência
                 </Button>
             </form>

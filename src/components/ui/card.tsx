@@ -76,17 +76,6 @@ const CardFooter = React.forwardRef<
 ))
 CardFooter.displayName = "CardFooter"
 
-const CardImage = React.forwardRef<
-  HTMLImageElement,
-  React.ImgHTMLAttributes<HTMLImageElement>
->(({ className, ...props }, ref) => (
-  <img
-    ref={ref}
-    className={cn("flex items-center w-24 justify-center", className)}
-    {...props}
-  />
-))
 
-CardImage.displayName = "CardImage"
 
-export { Card, CardHeader, CardFooter, CardTitle, CardImage, CardDescription, CardContent }
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }

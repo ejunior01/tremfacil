@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={cn("p-4", inter.className)}>{children}</body>
+      <body className={cn("container p-4", inter.className)}>{children}</body>
     </html>
   );
 }

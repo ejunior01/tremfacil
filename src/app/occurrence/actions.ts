@@ -1,6 +1,6 @@
 "use server";
 import { z } from "zod";
-import { occurrenceSchema } from "./occurrenceSchema";
+import { occurrenceSchema } from "./schema";
 
 export async function createOccurrence(data: z.infer<typeof occurrenceSchema>) {
   try {

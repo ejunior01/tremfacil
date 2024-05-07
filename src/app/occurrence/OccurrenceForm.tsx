@@ -5,15 +5,6 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 
 
-import { Button } from "@/components/ui/button"
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from "@/components/ui/form"
 import {
     Select,
     SelectContent,
@@ -22,12 +13,14 @@ import {
     SelectValue,
 } from "@/components/ui/Select"
 
-import { occurrenceSchema } from "@/app/occurrence/occurrenceSchema"
+import { occurrenceSchema } from "@/app/occurrence/schema"
 import { createOccurrence } from "@/app/occurrence/actions"
+import { Button } from "@/components/ui/Button"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 
-// function onSubmit(values: z.infer<typeof occurrenceSchema>) {
-//     createOccurrence(values)
-// }
+function onSubmit(values: z.infer<typeof occurrenceSchema>) {
+    createOccurrence(values)
+}
 
 
 export function OccurrenceForm() {
@@ -38,7 +31,7 @@ export function OccurrenceForm() {
 
     return (
         <Form {...form}>
-            <form className="w-2/3 space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4 box-border">
                 <FormField
                     control={form.control}
                     name="line"
@@ -110,7 +103,7 @@ export function OccurrenceForm() {
                     )}
                 />
 
-                <Button type="submit">Submit</Button>
+                <Button type="submit" className="my-5">Enviar ocorrência</Button>
             </form>
         </Form>
     )

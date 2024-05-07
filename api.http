@@ -1,0 +1,6 @@
+POST http://localhost:3000/api/add-occurrence
+
+{
+    "station":"1",
+    "occurrence":"1"
+}

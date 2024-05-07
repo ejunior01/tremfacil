@@ -18,10 +18,6 @@ export async function createOccurrence(data: z.infer<typeof occurrenceSchema>) {
 
     const occurrence = parse.data;
 
-    console.log({
-      message: occurrence,
-    });
-
     return {
       message: occurrence,
     };

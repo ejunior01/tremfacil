@@ -21,9 +21,9 @@ export function UserOptions({ router, imageSrc, title, description, color }: Use
     const colorBackground = userOptionsColors[color]
 
     return (
-        <Link href={router} className={`rounded-lg border text-card-foreground shadow-sm flex gap-4 h-44 p-4 items-center ${colorBackground} cursor-pointer relative overflow-hidden group `}>
+        <Link href={router} className={`rounded-lg border text-card-foreground shadow-sm flex gap-4 h-44 p-4 pt-6 items-center ${colorBackground} cursor-pointer relative overflow-hidden group `}>
             <div className="h-28 w-28 bg-white z-10 absolute -top-16 -right-16 rounded-full transition-all ease-linear duration-500 group-hover:scale-[20]"></div>
-            <div className="flex items-center h-full w-48 z-20 justify-center relative">
+            <div className="flex items-center h-full w-32 z-20 justify-center relative">
                 <Image
                     src={imageSrc}
                     alt=""
@@ -32,7 +32,7 @@ export function UserOptions({ router, imageSrc, title, description, color }: Use
                 />
             </div>
             <header className="flex flex-col space-y-1.5 flex-1 p-0 z-20">
-                <h3 className="leading-none tracking-tight text-2xl font-bold text-gray-500 ">{title}</h3>
+                <h3 className="leading-none tracking-tight text-lg font-bold text-gray-500 ">{title}</h3>
                 <p className="text-muted-foreground text-gray-300 text-sm">{description}</p>
             </header>
         </Link>

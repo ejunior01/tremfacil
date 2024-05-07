@@ -13,20 +13,21 @@ import {
     SelectValue,
 } from "@/components/ui/Select"
 
-import { occurrenceSchema } from "@/app/occurrence/schema"
-import { createOccurrence } from "@/app/occurrence/actions"
+
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Button } from "@/components/ui/button"
+import { occurrence } from "@/types/occurrence"
+import { createOccurrence } from "@/actions/createOccurrence"
 
-function onSubmit(values: z.infer<typeof occurrenceSchema>) {
+function onSubmit(values: z.infer<typeof occurrence>) {
     createOccurrence(values)
 }
 
 
 export function OccurrenceForm() {
 
-    const form = useForm<z.infer<typeof occurrenceSchema>>({
-        resolver: zodResolver(occurrenceSchema)
+    const form = useForm<z.infer<typeof occurrence>>({
+        resolver: zodResolver(occurrence)
     })
 
     return (

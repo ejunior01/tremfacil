@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const occurrenceSchema = z.object({
+export const occurrence = z.object({
   line: z.string({
     invalid_type_error: "Invalid line",
     required_error: "O campo ocorrência é linha",

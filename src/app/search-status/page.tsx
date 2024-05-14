@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { infer, z } from "zod"
+import { z } from "zod"
 
 import { Button } from "@/components/ui/Button"
 import {
@@ -18,15 +18,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { newOccurrenceSchema } from "@/types/newOccurrenceSchema"
 
 
+const statusSchema = newOccurrenceSchema.omit({ occurrence: true });
 
-export default function Occurrence() {
+export default function SeachStatus() {
     // 1. Define your form.
-    const form = useForm<z.infer<typeof newOccurrenceSchema>>({
-        resolver: zodResolver(newOccurrenceSchema)
+    const form = useForm<z.infer<typeof statusSchema>>({
+        resolver: zodResolver(statusSchema)
     })
 
     // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof newOccurrenceSchema>) {
+    function onSubmit(values: z.infer<typeof statusSchema>) {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         console.log(values)
@@ -37,7 +38,7 @@ export default function Occurrence() {
 
         <Card className="w-full lg:w-4/5 mx-auto p-4 flex flex-col gap-4">
             <CardHeader>
-                <CardTitle className="text-xl">Relatar um problema em uma estação</CardTitle>
+                <CardTitle className="text-xl">Visualizar Status de uma Estação</CardTitle>
             </CardHeader>
             <CardContent>
                 <Form {...form}>
@@ -90,32 +91,10 @@ export default function Occurrence() {
                                 </FormItem>
                             )}
                         />
-                        <FormField
-                            control={form.control}
-                            name="occurrence"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Ocorrência</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                        <FormControl>
-                                            <SelectTrigger>
-                                                <SelectValue placeholder="Selecione a ocorrência" />
-                                            </SelectTrigger>
-                                        </FormControl>
-                                        <SelectContent>
-                                            <SelectItem value="accident">Acidente</SelectItem>
-                                            <SelectItem value="roadblocked">Via interditada</SelectItem>
-                                            <SelectItem value="Stationclosed">Estação fechada</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
 
                         <div className="flex gap-12 justify-between mt-6">
                             <Button className="flex-1" variant="outline">Cancelar</Button>
-                            <Button className="flex-1" type="submit">Registrar</Button>
+                            <Button className="flex-1" type="submit">Buscar</Button>
                         </div>
                     </form>
                 </Form>

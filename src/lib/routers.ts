@@ -1,4 +1,4 @@
 export const routers = {
   occurrence: "/occurrence",
-  status: "/status",
+  status: "/search-status",
 };

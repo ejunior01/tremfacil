@@ -2,7 +2,7 @@ import { routers } from "@/lib/routers";
 import Image from "next/image";
 import { MoveRight } from "lucide-react"
 import Link from 'next/link'
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 
 interface UserOptionsProps {

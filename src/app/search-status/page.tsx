@@ -5,20 +5,12 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 
 import { Button } from "@/components/ui/button"
-import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from "@/components/ui/Form"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 import { newOccurrenceSchema } from "@/types/newOccurrenceSchema"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select"
-
-
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 
 const statusSchema = newOccurrenceSchema.omit({ occurrence: true });
 

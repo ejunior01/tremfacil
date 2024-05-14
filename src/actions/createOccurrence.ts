@@ -1,11 +1,13 @@
 "use server";
-import { occurrence } from "@/types/occurrence";
+
+import { newOccurrenceSchema } from "@/types/newOccurrenceSchema";
 import { z } from "zod";
 
-
-export async function createOccurrence(data: z.infer<typeof occurrence>) {
+export async function createOccurrence(
+  data: z.infer<typeof newOccurrenceSchema>
+) {
   try {
-    const parse = occurrence.safeParse({
+    const parse = newOccurrenceSchema.safeParse({
       line: data.line,
       occurrence: data.occurrence,
       station: data.station,

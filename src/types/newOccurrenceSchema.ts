@@ -1,10 +1,6 @@
 import { z } from "zod";
 
-<<<<<<<< HEAD:src/types/occurrence.ts
-export const occurrence = z.object({
-========
 export const newOccurrenceSchema = z.object({
->>>>>>>> view-change:src/types/newOccurrenceSchema.ts
   line: z.string({
     invalid_type_error: "Invalid line",
     required_error: "O campo é linha obrigatório",

@@ -14,8 +14,9 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+
 import { newOccurrenceSchema } from "@/types/newOccurrenceSchema"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 
 const statusSchema = newOccurrenceSchema.omit({ occurrence: true });

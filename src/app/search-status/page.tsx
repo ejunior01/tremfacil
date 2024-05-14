@@ -13,10 +13,11 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 import { newOccurrenceSchema } from "@/types/newOccurrenceSchema"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+
 
 
 const statusSchema = newOccurrenceSchema.omit({ occurrence: true });

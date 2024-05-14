@@ -1,6 +1,8 @@
 import { routers } from "@/lib/routers";
 import Image from "next/image";
+import { MoveRight } from "lucide-react"
 import Link from 'next/link'
+import { Button } from "@/components/ui/Button";
 
 
 interface UserOptionsProps {
@@ -18,12 +20,10 @@ const userOptionsColors: { [key: string]: string } = {
 
 export function UserOptions({ router, imageSrc, title, description, color }: UserOptionsProps) {
 
-    const colorBackground = userOptionsColors[color]
 
     return (
-        <Link href={router} className={`rounded-lg border text-card-foreground shadow-sm flex gap-4 h-44 p-4 items-center ${colorBackground} cursor-pointer relative overflow-hidden group `}>
-            <div className="h-28 w-28 bg-white z-10 absolute -top-16 -right-16 rounded-full transition-all ease-linear duration-500 group-hover:scale-[20]"></div>
-            <div className="flex items-center h-full w-48 z-20 justify-center relative">
+        <Link href={router} className={`bg-transparent rounded-sm border shadow-sm flex flex-col gap-4 md:max-w-72 h-32 md:h-72 py-4 px-6 items-center cursor-pointer hover:shadow-lg transition-all duration-500 hover:bg-primary-foreground`}>
+            <div className="flex items-center max-h-52 h-full w-36 z-20 justify-center relative ">
                 <Image
                     src={imageSrc}
                     alt=""
@@ -31,9 +31,9 @@ export function UserOptions({ router, imageSrc, title, description, color }: Use
                     quality={100}
                 />
             </div>
-            <header className="flex flex-col space-y-1.5 flex-1 p-0 z-20">
-                <h3 className="leading-none tracking-tight text-2xl font-bold text-gray-500 ">{title}</h3>
-                <p className="text-muted-foreground text-gray-300 text-sm">{description}</p>
+            <header className="flex flex-col space-y-1.5 flex-1 p-0 z-20 gap-1">
+                <h3 className="leading-none tracking-tight text-lg font-bold">{title}</h3>
+                <p className="text-xs">{description}</p>
             </header>
         </Link>
     )

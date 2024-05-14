@@ -12,11 +12,11 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form"
+} from "@/components/ui/Form"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 import { newOccurrenceSchema } from "@/types/newOccurrenceSchema"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/Select"
 
 
 

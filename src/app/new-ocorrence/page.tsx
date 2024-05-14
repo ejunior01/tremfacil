@@ -1,19 +1,26 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Form, useForm } from "react-hook-form"
-import { infer, z } from "zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
 
+import { Button } from "@/components/ui/button"
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 import { newOccurrenceSchema } from "@/types/newOccurrenceSchema"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form"
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@radix-ui/react-select"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 
 
-export default function Occurrence() {
+export default function NewOcorrence() {
     // 1. Define your form.
     const form = useForm<z.infer<typeof newOccurrenceSchema>>({
         resolver: zodResolver(newOccurrenceSchema)
@@ -31,7 +38,7 @@ export default function Occurrence() {
 
         <Card className="w-full lg:w-4/5 mx-auto p-4 flex flex-col gap-4">
             <CardHeader>
-                <CardTitle className="text-xl">Relatar um problema em uma estação</CardTitle>
+                <CardTitle className="text-xl">Visualizar Status de uma Estação</CardTitle>
             </CardHeader>
             <CardContent>
                 <Form {...form}>
@@ -83,6 +90,7 @@ export default function Occurrence() {
                                     <FormMessage />
                                 </FormItem>
                             )}
+
                         />
                         <FormField
                             control={form.control}
